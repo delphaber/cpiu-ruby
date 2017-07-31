@@ -1,6 +1,6 @@
-require "spec_helper"
+require 'spec_helper'
 
-RSpec.describe RubyCpiu do
+RSpec.describe RubyCPIU do
   it "has a version number" do
     expect(RubyCpiu::VERSION).not_to be nil
   end

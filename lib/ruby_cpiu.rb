@@ -17,6 +17,6 @@
 require 'ruby_cpiu/version'
 require 'ruby_cpiu/api'
 
-module RubyCpiu
+module RubyCPIU
   # Your code goes here...
 end

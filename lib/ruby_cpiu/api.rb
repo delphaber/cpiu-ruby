@@ -19,7 +19,7 @@ require 'json'
 require 'dotenv/load'
 require 'ruby_cpiu'
 
-module RubyCpiu
+module RubyCPIU
   class API
 
     def self.get_data(startyear, endyear)
