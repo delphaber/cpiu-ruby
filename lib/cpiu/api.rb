@@ -19,9 +19,9 @@
 require 'rest-client'
 require 'json'
 require 'dotenv/load'
-require 'ruby_cpiu'
+require 'cpiu'
 
-module RubyCPIU
+module CPIU
   # Interacts with the BLS.gov public API
   class API
     URL = 'https://api.bls.gov/publicAPI/v2/timeseries/data/'.freeze

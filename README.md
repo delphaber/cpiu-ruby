@@ -9,7 +9,7 @@ Neither I nor BLS.gov can vouch for the data or analyses derived from these data
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby_cpiu', '~> 0.1.0'
+gem 'cpiu', '~> 0.1.0'
 ```
 
 And then execute:
@@ -25,7 +25,7 @@ Or install it yourself as:
 Add the following to your program:
 
 ```ruby
-require 'cpiu_ruby'
+require 'cpiu'
 ```
 
 TODO: Write usage instructions here

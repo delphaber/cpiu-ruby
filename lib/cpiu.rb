@@ -14,10 +14,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'ruby_cpiu/version'
-require 'ruby_cpiu/api'
+require 'cpiu/version'
+require 'cpiu/api'
 
-# main ruby_cpiu module
-module RubyCPIU
+# main cpiu module
+module CPIU
   # Your code goes here...
 end

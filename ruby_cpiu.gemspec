@@ -2,11 +2,11 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ruby_cpiu/version'
+require 'cpiu/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'ruby_cpiu'
-  spec.version       = RubyCPIU::VERSION
+  spec.name          = 'cpiu'
+  spec.version       = CPIU::VERSION
   spec.authors       = ['Cody Logan']
   spec.email         = ['clpo13@gmail.com']
 
