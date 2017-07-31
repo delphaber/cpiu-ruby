@@ -5,7 +5,7 @@ require "ruby_cpiu/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "ruby_cpiu"
-  spec.version       = RubyCpiu::VERSION
+  spec.version       = RubyCPIU::VERSION
   spec.authors       = ["Cody Logan"]
   spec.email         = ["clpo13@gmail.com"]
 

@@ -14,9 +14,28 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'ruby_cpiu/version'
-require 'ruby_cpiu/api'
+require 'rest-client'
+require 'json'
+require 'dotenv/load'
+require 'ruby_cpiu'
 
 module RubyCpiu
-  # Your code goes here...
+  class API
+
+    def self.get_data(startyear, endyear)
+
+      url = 'https://api.bls.gov/publicAPI/v2/timeseries/data/'
+      seriesid = 'CUUR0000SA0'
+
+      response = RestClient.post(url,
+                                 {'seriesid'  => [seriesid],
+                                  'startyear' => startyear,
+                                  'endyear'   => endyear,
+                                  'annualaverage' => true,
+                                  'registrationkey' => ENV['BLS_API_KEY']
+                                 }.to_json,
+                                 :content_type => 'application/json')
+      JSON(response)
+    end
+  end
 end

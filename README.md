@@ -1,13 +1,15 @@
 # CPIU
 
-This is a Ruby interface for CPI-U data from BLS.
+CPIU is a Ruby interface for [CPI-U](https://www.bls.gov/cpi/) data provided by the U.S. Bureau of Labor Statistics. CPI-U data are commonly used for calculating inflation. More info on the BLS Public Data API is available [here](https://www.bls.gov/developers/home.htm).
+
+Neither I nor BLS.gov can vouch for the data or analyses derived from these data after the data have been retrieved from BLS.gov.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby_cpiu'
+gem 'ruby_cpiu', '~> 0.1.0'
 ```
 
 And then execute:
@@ -39,4 +41,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/clpo13/ruby_cpiu.
 
 ## License
-[GPLv3](LICENSE.txt)
+This code is licensed under [GPLv3](LICENSE.txt).
