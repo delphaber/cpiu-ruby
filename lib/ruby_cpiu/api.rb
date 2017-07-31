@@ -22,6 +22,12 @@ require 'ruby_cpiu'
 module RubyCPIU
   class API
 
+    # Pulls CPI-U data from the BLS server given two years between
+    # 1913 and the present with a maximum range of 20 years.
+    #
+    # @param startyear [Integer] the first year to get data for
+    # @param endyear [Integer] the last year to get data for
+    # @return [JSON] the response data retrieved from the server
     def self.get_data(startyear, endyear)
 
       url = 'https://api.bls.gov/publicAPI/v2/timeseries/data/'
