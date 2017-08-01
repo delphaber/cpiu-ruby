@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bls.gov/publicAPI/v2/timeseries/data/
+    body:
+      encoding: UTF-8
+      string: '{"seriesid":["CUUR0000SA0"],"startyear":1913,"endyear":1914,"annualaverage":false,"calculations":false,"registrationkey":"<SECURE>"}'
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (mingw32 x86_64) ruby/2.4.1p111
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '156'
+      Host:
+      - api.bls.gov
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 01 Aug 2017 23:28:36 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains;
+      Set-Cookie:
+      - JSESSIONID=F7FDB348E776CCB74BBDC3102716FACA; Version=1; Path="/publicAPI/";
+        Secure; HttpOnly
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2154'
+    body:
+      encoding: UTF-8
+      string: |-
+        {"status":"REQUEST_SUCCEEDED","responseTime":45,"message":[],"Results":{
+        "series":
+        [{"seriesID":"CUUR0000SA0","data":[{"year":"1914","period":"M12","periodName":"December","value":"10.1","footnotes":[{}]},{"year":"1914","period":"M11","periodName":"November","value":"10.2","footnotes":[{}]},{"year":"1914","period":"M10","periodName":"October","value":"10.1","footnotes":[{}]},{"year":"1914","period":"M09","periodName":"September","value":"10.2","footnotes":[{}]},{"year":"1914","period":"M08","periodName":"August","value":"10.2","footnotes":[{}]},{"year":"1914","period":"M07","periodName":"July","value":"10.0","footnotes":[{}]},{"year":"1914","period":"M06","periodName":"June","value":"9.9","footnotes":[{}]},{"year":"1914","period":"M05","periodName":"May","value":"9.9","footnotes":[{}]},{"year":"1914","period":"M04","periodName":"April","value":"9.8","footnotes":[{}]},{"year":"1914","period":"M03","periodName":"March","value":"9.9","footnotes":[{}]},{"year":"1914","period":"M02","periodName":"February","value":"9.9","footnotes":[{}]},{"year":"1914","period":"M01","periodName":"January","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M12","periodName":"December","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M11","periodName":"November","value":"10.1","footnotes":[{}]},{"year":"1913","period":"M10","periodName":"October","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M09","periodName":"September","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M08","periodName":"August","value":"9.9","footnotes":[{}]},{"year":"1913","period":"M07","periodName":"July","value":"9.9","footnotes":[{}]},{"year":"1913","period":"M06","periodName":"June","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M05","periodName":"May","value":"9.7","footnotes":[{}]},{"year":"1913","period":"M04","periodName":"April","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M03","periodName":"March","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M02","periodName":"February","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M01","periodName":"January","value":"9.8","footnotes":[{}]}]}]
+        }}
+    http_version: 
+  recorded_at: Tue, 01 Aug 2017 23:28:36 GMT
+recorded_with: VCR 3.0.3
