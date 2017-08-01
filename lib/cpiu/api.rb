@@ -19,26 +19,31 @@
 require 'rest-client'
 require 'json'
 require 'dotenv/load'
-require 'cpiu'
 
 module CPIU
   # Interacts with the BLS.gov public API
   class API
+    # URL to send POST requests to
     URL = 'https://api.bls.gov/publicAPI/v2/timeseries/data/'.freeze
+    # The time series to query
     SERIESID = 'CUUR0000SA0'.freeze
-    # Pulls CPI-U data from the BLS server given two years between
-    # 1913 and the present with a maximum range of 20 years.
+
+    # Requests CPI-U data from the BLS server given two years between 1913 and the
+    # present. The API will only return a maximum range of 20 years from the start year.
     #
     # @param startyear [Integer] the first year to get data for
     # @param endyear [Integer] the last year to get data for
-    # @return [JSON] the response data retrieved from the server
-    def self.get_data(startyear, endyear)
+    # @param ann_avg [Boolean] set to true to include the average of monthly CPI values for a year
+    # @param calcs [Boolean] set to true to include net and percent CPI change calculations
+    # @return [Hash{String => String, Integer, Array}] the response data retrieved from the server
+    def self.request_data(startyear, endyear, ann_avg = false, calcs = false)
       response = RestClient.post(URL,
                                  {
-                                   'seriesid'  => [SERIESID],
-                                   'startyear' => startyear,
-                                   'endyear'   => endyear,
-                                   'annualaverage' => true,
+                                   'seriesid'        => [SERIESID],
+                                   'startyear'       => startyear,
+                                   'endyear'         => endyear,
+                                   'annualaverage'   => ann_avg,
+                                   'calculations'    => calcs,
                                    'registrationkey' => ENV['BLS_API_KEY']
                                  }.to_json,
                                  content_type: 'application/json')

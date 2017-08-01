@@ -9,16 +9,20 @@ Neither I nor BLS.gov can vouch for the data or analyses derived from these data
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cpiu', '~> 0.1.0'
+gem 'cpiu', '~> 0.1'
 ```
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install cpiu
+```bash
+gem install cpiu
+```
 
 ## Usage
 
@@ -28,7 +32,64 @@ Add the following to your program:
 require 'cpiu'
 ```
 
-TODO: Write usage instructions here
+The following methods will retrieve JSON objects containing CPI-U data:
+
+* `CPIU::Data.single_year(year)` - data for a single year
+* `CPIU::Data.year_range(startyear, endyear)` - data for a year range no greater than 20 years
+
+The data is returned in an array of hashes:
+
+```ruby
+[
+  {
+    "year" => "1913",
+    "period" => "M12",
+    "periodName" => "December",
+    "value" => "10.0",
+    "footnotes" => [{}]
+  },
+  ...
+]
+```
+
+A raw API call method is available too:
+
+* `CPIU::API.request_data(startyear, endyear, ann_avg, calcs)`
+
+If set to `true`, `ann_avg` will return the average CPI value for each year, and `calcs` will return net and percent changes in CPI. This method returns all response data in the form of a hash:
+
+```ruby
+{
+  "status" => "REQUEST_SUCCEEDED",
+  "responseTime" => 34,
+  "message" => [],
+  "Results" => {
+    "series" => [
+      {
+        "seriesID" => "CUUR0000SA0",
+        "data" => [
+          {
+            "year" => "1913",
+            "period" => "M13",
+            "periodName" => "Annual",
+            "value" => "9.9",
+            "footnotes" => [{}],
+            "calculations" => {
+              "net_changes" => {},
+              "pct_changes" => {
+                "1" => "-1.0",
+                "3" => "-1.0",
+                "6" => "0.0"
+              }
+            }
+          },
+          ...
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## Development
 
@@ -38,7 +99,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/clpo13/ruby_cpiu.
+Bug reports and pull requests are welcome on GitHub at <https://github.com/clpo13/ruby_cpiu>.
 
 ## License
 

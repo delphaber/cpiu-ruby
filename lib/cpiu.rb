@@ -14,8 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'cpiu/version'
 require 'cpiu/api'
+require 'cpiu/data'
+require 'cpiu/version'
 
 # main cpiu module
 module CPIU
