@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['cody@madrants.net']
 
   spec.summary       = 'A Ruby interface for getting CPI-U data from BLS.gov'
-  spec.homepage      = 'https://github.com/clpo13/ruby_cpiu'
+  spec.homepage      = 'https://github.com/clpo13/cpiu-ruby'
 
   spec.license       = 'GPL-3.0'
 
