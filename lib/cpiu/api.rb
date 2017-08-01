@@ -28,14 +28,18 @@ module CPIU
     # The time series to query
     SERIESID = 'CUUR0000SA0'.freeze
 
-    # Requests CPI-U data from the BLS server given two years between 1913 and the
-    # present. The API will only return a maximum range of 20 years from the start year.
+    # Requests CPI-U data from the BLS server given two years between 1913 and
+    # the present. The API will only return a maximum range of 20 years from
+    # the start year.
     #
     # @param startyear [Integer] the first year to get data for
     # @param endyear [Integer] the last year to get data for
-    # @param ann_avg [Boolean] set to true to include the average of monthly CPI values for a year
-    # @param calcs [Boolean] set to true to include net and percent CPI change calculations
-    # @return [Hash{String => String, Integer, Array}] the response data retrieved from the server
+    # @param ann_avg [Boolean] set to true to include the average of monthly CPI
+    #   values for a year
+    # @param calcs [Boolean] set to true to include net and percent CPI change
+    #   calculations
+    # @return [Hash{String => String, Integer, Array}] the response data
+    #   retrieved from the server
     def self.request_data(startyear, endyear, ann_avg = false, calcs = false)
       response = RestClient.post(URL,
                                  {

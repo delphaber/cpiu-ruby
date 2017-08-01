@@ -22,7 +22,7 @@ module CPIU
   class Data
     # Get CPI data for a single year
     # @param year [Integer]
-    # @return [Array<Hash>] an array of hashes containing monthly CPI values 
+    # @return [Array<Hash>] an array of hashes containing monthly CPI values
     def self.single_year(year)
       response = CPIU::API.request_data(year, year)
       response['Results']['series'][0]['data']
@@ -31,7 +31,7 @@ module CPIU
     # Get CPI data for a year range (up to 20 years)
     # @param startyear [Integer] the first year to get data for
     # @param endyear [Integer] the last year to get data for
-    # @return [Array<Hash>] an array of hashes containing monthly CPI values 
+    # @return [Array<Hash>] an array of hashes containing monthly CPI values
     def self.year_range(startyear, endyear)
       response = CPIU::API.request_data(startyear, endyear)
       response['Results']['series'][0]['data']
