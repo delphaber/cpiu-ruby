@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/clpo13/cpiu-ruby.svg?branch=master)](https://travis-ci.org/clpo13/cpiu-ruby)
 [![Coverage Status](https://coveralls.io/repos/github/clpo13/cpiu-ruby/badge.svg?branch=master)](https://coveralls.io/github/clpo13/cpiu-ruby?branch=master)
+[![Gem Version](https://badge.fury.io/rb/cpiu.svg)](https://badge.fury.io/rb/cpiu)
 
 CPIU is a Ruby interface for [CPI-U](https://www.bls.gov/cpi/) data provided by the U.S. Bureau of Labor Statistics. CPI-U data are commonly used for calculating inflation. More info on the BLS Public Data API is available [here](https://www.bls.gov/developers/home.htm).
 
