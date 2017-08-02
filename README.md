@@ -13,7 +13,7 @@ Neither I nor BLS.gov can vouch for the data or analyses derived from these data
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cpiu', '~> 0.1'
+gem 'cpiu', '~> 0.2'
 ```
 
 And then execute:
@@ -55,6 +55,11 @@ The data is returned in an array of hashes:
   ...
 ]
 ```
+
+If you just want CPI-U values:
+
+* `CPIU::Data.cpiu_year(year)` - the annual average CPI value for a year
+* `CPIU::Data.cpiu_month(year, month)` - the CPI value for a particular month
 
 A raw API call method is available too:
 
