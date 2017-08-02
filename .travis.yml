@@ -6,3 +6,11 @@ rvm:
 - 2.2
 before_install: gem install bundler -v 1.15.3
 cache: bundler
+deploy:
+  provider: rubygems
+  api_key:
+    secure: mwHBcES+QeqKqbz3o9Xoz5J87C1S9BoqhLU6E5+wjskzfuUUPb5nFiZXN7Fe1zssx2jzEF1K0rGD5eYpJaq/qnoRXMSTFWNrOhk+CAy5g6yzizqRO8Gx7T7H2jMtxkEP0I+x/bFFXlHIhh2t7+cBm2WBSDWtAVnHKXlNAq+lDBhuQX9r9XKW50dfjPVaio4dvUAtehea3AhAFH+S/s1Vkz5bJYPYxZA/ddpwt1KfGvYnvhyuWPHPyuMCmQnyeOifaQZhQy5GCqSnlCs5nOlmn+Y7JTDGv4UNsSPt7Fkhlp7leqCto06oh82hHfUtJP8pzW42prU0rCfN4Un1zAnNMf5KNFp4o3SmAkHjAOQ1LrHafiTXNKUpLm6aLlKRr6O6S2ly3EKPDVlCcMU34n7X7vTH2YdK8AsWZUa/LB3gNLTM6HwNrzjJe77t4TU3NgVbVjqb9nuiFrVkBxuDDRVKc6zR2j04jwQswljxoyr5zXAvq4V/YRvpB4RlZAmhS+CtirRFYtIK/n85wtv7uRHQODcF67E2V/YsTQ1X8Tr1Z39waVbMRSIsqazas5XODNYzYW3gtHO45C12V3F8Zj5e6p23lqFSjqXxMy+/fIjvVA3Uyjl4UvHcNmPaMZSdRrr5T0WZk0x+BR8Z0v/aSb+xKCA1g4C7wSUqXJuLYOyifC8=
+  gem: cpiu
+  on:
+    tags: true
+    repo: clpo13/cpiu-ruby
