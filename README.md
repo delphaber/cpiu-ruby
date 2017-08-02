@@ -36,6 +36,8 @@ Add the following to your program:
 require 'cpiu'
 ```
 
+In order to get the most out of the BLS API, you will need a registration key, which can be obtained [here](https://data.bls.gov/registrationEngine/). Create a file named `.env` in the root of your project folder with the contents `BLS_API_KEY=<your key here>`. The API can still be queried without a key, but there are [restrictions](https://www.bls.gov/developers/api_faqs.htm#register1) on what data will be returned.
+
 The following methods will retrieve JSON objects containing CPI-U data:
 
 * `CPIU::Data.single_year(year)` - data for a single year
@@ -116,4 +118,10 @@ Bug reports and pull requests are welcome on GitHub at <https://github.com/clpo1
 
 ## License
 
-This code is licensed under [GPLv3](LICENSE.txt).
+Copyright &copy; 2017 Cody Logan
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+A copy of the GNU General Public License can be found in [LICENSE.txt](LICENSE.txt) and at <http://www.gnu.org/licenses/>.

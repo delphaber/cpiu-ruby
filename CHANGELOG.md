@@ -1,5 +1,9 @@
 # CPIU
 
+## 0.2.1
+
+* Add information on `.env` file to documentation
+
 ## 0.2.0
 
 * Added two new methods to CPIU::Data:
@@ -13,4 +17,3 @@
 ## 0.1.0
 
 * Initial release
-
