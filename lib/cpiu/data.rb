@@ -24,7 +24,7 @@ module CPIU
     # @param year [Integer]
     # @return [Array<Hash>] an array of hashes containing monthly CPI values
     def self.single_year(year)
-      response = CPIU::API.request_data(year, year)
+      response = CPIU::API.request_data(year, year, true)
       response['Results']['series'][0]['data']
     end
 
@@ -35,6 +35,23 @@ module CPIU
     def self.year_range(startyear, endyear)
       response = CPIU::API.request_data(startyear, endyear)
       response['Results']['series'][0]['data']
+    end
+
+    # Get annual average CPI for a given year
+    # @param year [Integer] the year
+    # @return [Float]
+    def self.cpiu_year(year)
+      data = CPIU::Data.single_year(year)
+      data[0]['value'].to_f
+    end
+
+    # Get CPI value for a given month and year
+    # @param year [Integer] the year
+    # @param month [Integer] the month (1-12)
+    # @return [Float]
+    def self.cpiu_month(year, month)
+      data = CPIU::Data.single_year(year).reverse
+      data[month - 1]['value'].to_f
     end
   end
 end

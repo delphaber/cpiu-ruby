@@ -5,18 +5,18 @@ http_interactions:
     uri: https://api.bls.gov/publicAPI/v2/timeseries/data/
     body:
       encoding: UTF-8
-      string: '{"seriesid":["CUUR0000SA0"],"startyear":1913,"endyear":1913,"annualaverage":false,"calculations":false,"registrationkey":"<SECURE>"}'
+      string: '{"seriesid":["CUUR0000SA0"],"startyear":1913,"endyear":1913,"annualaverage":true,"calculations":false,"registrationkey":"<SECURE>"}'
     headers:
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip, deflate
       User-Agent:
-      - rest-client/2.0.2 (mingw32 x86_64) ruby/2.4.1p111
+      - rest-client/2.0.2 (darwin16.6.0 x86_64) ruby/2.4.1p111
       Content-Type:
       - application/json
       Content-Length:
-      - '156'
+      - '155'
       Host:
       - api.bls.gov
   response:
@@ -25,23 +25,23 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 01 Aug 2017 23:28:15 GMT
+      - Wed, 02 Aug 2017 04:42:18 GMT
       Strict-Transport-Security:
       - max-age=31536000; includeSubdomains;
       Set-Cookie:
-      - JSESSIONID=09DB0ABAB033B05BC1CECBB682675792; Version=1; Path="/publicAPI/";
+      - JSESSIONID=A9CE914E44FC0BA028240B0F3D107829; Version=1; Path="/publicAPI/";
         Secure; HttpOnly
       Content-Type:
       - application/json
       Content-Length:
-      - '1137'
+      - '1221'
     body:
       encoding: UTF-8
       string: |-
-        {"status":"REQUEST_SUCCEEDED","responseTime":38,"message":[],"Results":{
+        {"status":"REQUEST_SUCCEEDED","responseTime":32,"message":[],"Results":{
         "series":
-        [{"seriesID":"CUUR0000SA0","data":[{"year":"1913","period":"M12","periodName":"December","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M11","periodName":"November","value":"10.1","footnotes":[{}]},{"year":"1913","period":"M10","periodName":"October","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M09","periodName":"September","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M08","periodName":"August","value":"9.9","footnotes":[{}]},{"year":"1913","period":"M07","periodName":"July","value":"9.9","footnotes":[{}]},{"year":"1913","period":"M06","periodName":"June","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M05","periodName":"May","value":"9.7","footnotes":[{}]},{"year":"1913","period":"M04","periodName":"April","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M03","periodName":"March","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M02","periodName":"February","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M01","periodName":"January","value":"9.8","footnotes":[{}]}]}]
+        [{"seriesID":"CUUR0000SA0","data":[{"year":"1913","period":"M13","periodName":"Annual","value":"9.9","footnotes":[{}]},{"year":"1913","period":"M12","periodName":"December","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M11","periodName":"November","value":"10.1","footnotes":[{}]},{"year":"1913","period":"M10","periodName":"October","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M09","periodName":"September","value":"10.0","footnotes":[{}]},{"year":"1913","period":"M08","periodName":"August","value":"9.9","footnotes":[{}]},{"year":"1913","period":"M07","periodName":"July","value":"9.9","footnotes":[{}]},{"year":"1913","period":"M06","periodName":"June","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M05","periodName":"May","value":"9.7","footnotes":[{}]},{"year":"1913","period":"M04","periodName":"April","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M03","periodName":"March","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M02","periodName":"February","value":"9.8","footnotes":[{}]},{"year":"1913","period":"M01","periodName":"January","value":"9.8","footnotes":[{}]}]}]
         }}
     http_version: 
-  recorded_at: Tue, 01 Aug 2017 23:28:14 GMT
+  recorded_at: Wed, 02 Aug 2017 04:42:25 GMT
 recorded_with: VCR 3.0.3
