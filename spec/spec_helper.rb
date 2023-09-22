@@ -14,8 +14,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'coveralls'
-Coveralls.wear!
+require 'simplecov'
+require 'simplecov-lcov'
+SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+SimpleCov.start
 
 require 'bundler/setup'
 require 'webmock/rspec'
