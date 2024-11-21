@@ -16,9 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'rest-client'
 require 'json'
-require 'dotenv/load'
+require 'net/http'
+require 'uri'
 
 module CPIU
   # Interacts with the BLS.gov public API
@@ -41,17 +41,25 @@ module CPIU
     # @return [Hash{String => String, Integer, Array}] the response data
     #   retrieved from the server
     def self.request_data(startyear, endyear, ann_avg = false, calcs = false)
-      response = RestClient.post(URL,
-                                 {
-                                   'seriesid'        => [SERIESID],
-                                   'startyear'       => startyear,
-                                   'endyear'         => endyear,
-                                   'annualaverage'   => ann_avg,
-                                   'calculations'    => calcs,
-                                   'registrationkey' => ENV['BLS_API_KEY']
-                                 }.to_json,
-                                 content_type: 'application/json')
-      JSON(response)
+      response = Net::HTTP.post(
+        URI(URL),
+        {
+          'seriesid'        => [SERIESID],
+          'startyear'       => startyear,
+          'endyear'         => endyear,
+          'annualaverage'   => ann_avg,
+          'calculations'    => calcs,
+          'registrationkey' => ENV['BLS_API_KEY']
+        }.to_json,
+        "Content-Type" => "application/json"
+      )
+
+      case response
+      when Net::HTTPSuccess
+        JSON.parse(response.body)
+      else
+        raise "HTTP Request failed: #{response.code} #{response.message}"
+      end
     end
   end
 end

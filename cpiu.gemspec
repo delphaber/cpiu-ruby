@@ -46,7 +46,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov', '~> 0.22'
   spec.add_development_dependency 'simplecov-lcov', '~> 0.8'
 
-  spec.add_dependency 'rest-client', '~> 2.0'
   spec.add_dependency 'json', '~> 2.1'
-  spec.add_dependency 'dotenv', '~> 2.2'
 end
